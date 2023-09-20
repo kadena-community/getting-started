@@ -60,6 +60,11 @@ to be created before it can be used.
 
 ## Fund your account
 
+> Note: we use [NodeJS](https://nodejs.dev/en/learn/how-to-install-nodejs/)
+> (personal recommendation to
+> [install with `n`](https://github.com/tj/n#readme)) and run `npm install` in
+> the root of this project
+
 Before we can create an account, you need to have KDA to pay for the gas-fees
 (transaction fee).
 
@@ -74,7 +79,7 @@ makes a `keyset`, which is used to `guard` your account.
    "Accounts" tab and fill it in the command
 
 ```jsx
-npm run fund-account --keys "<your-key>" --predicate "keys-all"
+npm run start fund --keys "<your-key>" --predicate "keys-all"
 ```
 
 1. Open the Block Explorer http://localhost:8080/explorer/ to monitor the
@@ -82,5 +87,3 @@ npm run fund-account --keys "<your-key>" --predicate "keys-all"
 2. In Chainweaver, click "Refresh" to update the account balances
 
 ## Deploy a contract
-
-
