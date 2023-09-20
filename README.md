@@ -79,7 +79,7 @@ makes a `keyset`, which is used to `guard` your account.
    "Accounts" tab and fill it in the command
 
 ```jsx
-npm run start fund --keys "<your-key>" --predicate "keys-all"
+npm run start -- fund --keys "<your-key>" --predicate "keys-all"
 ```
 
 1. Open the Block Explorer http://localhost:8080/explorer/ to monitor the
@@ -87,3 +87,5 @@ npm run start fund --keys "<your-key>" --predicate "keys-all"
 2. In Chainweaver, click "Refresh" to update the account balances
 
 ## Deploy a contract
+
+TBD

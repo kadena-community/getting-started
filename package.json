@@ -1,13 +1,13 @@
 {
   "name": "getting-started",
   "version": "1.0.0",
-  "description": "",
+  "description": "5 minute quick-start with Kadena",
   "main": "index.js",
   "scripts": {
     "start": "ts-node -T src/index.ts"
   },
   "keywords": [],
-  "author": "",
+  "author": "Albert Groothedde <albert@kadena.io>",
   "license": "ISC",
   "dependencies": {
     "@kadena/client": "^1.4.0",
