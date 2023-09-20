@@ -1,0 +1,21 @@
+{
+  "name": "getting-started",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node -T src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@kadena/client": "^1.4.0",
+    "@kadena/cryptography-utils": "^0.3.8",
+    "commander": "^11.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.6.3",
+    "ts-node": "^10.9.1"
+  }
+}
