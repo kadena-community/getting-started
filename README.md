@@ -1,4 +1,4 @@
-# Getting Started with Kadena
+# 10 minute quickstart with Kadena
 
 Welcome to the world of Kadena, a powerful blockchain platform that combines
 scalability with simplicity. In this guide, we'll walk you through the essential
