@@ -18,6 +18,8 @@ intuitive and efficient.
 
    ```jsx
    docker run -it -p 8080:8080 -v kadena_devnet:/data --name devnet kadena/devnet
+   # restart with
+   docker start devnet
    ```
 
 ## Monitor the blockchain
