@@ -34,7 +34,7 @@ executed
 In Kadena a block is mined every 30 seconds. However, to optimize development
 workflow, the devnet mines a block in 5 seconds.
 
-## Install Chainweaver
+## Chainweaver wallet
 
 1. Download and install Chainweaver:
    https://github.com/kadena-io/chainweaver/releases  
