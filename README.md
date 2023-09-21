@@ -6,6 +6,9 @@ steps to kickstart your journey with Kadena. Whether you're a seasoned
 blockchain developer or a newcomer to the space, you'll find the process
 intuitive and efficient.
 
+Here we run Devnet and deploy a "Hello World" smart-contract on Kadena blockchain 
+in 10 minutes
+
 ## Start fat-container `kadena/devnet`
 
 1. Create docker volume
