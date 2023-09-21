@@ -81,13 +81,13 @@ makes a `keyset`, which is used to `guard` your account.
 1. Send money from "sender00" to your account. Copy your account name from the
    "Accounts" tab and fill it in the command
 
-```jsx
-npm run start -- fund --keys "<your-key>" --predicate "keys-all"
-```
+   ```jsx
+   npm run start -- fund --keys "<your-key>" --predicate "keys-all"
+   ```
 
-1. Open the Block Explorer http://localhost:8080/explorer/ to monitor the
+2. Open the Block Explorer http://localhost:8080/explorer/ to monitor the
    transaction
-2. In Chainweaver, click "Refresh" to update the account balances
+3. In Chainweaver, click "Refresh" to update the account balances
 
 ## Deploy a contract
 
