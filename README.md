@@ -35,7 +35,8 @@ workflow, the devnet mines a block in 5 seconds.
 ## Install Chainweaver
 
 1. Download and install Chainweaver:
-   https://github.com/kadena-io/chainweaver/releases
+   https://github.com/kadena-io/chainweaver/releases  
+   Or use the web version: https://chainweaver.kadena.network
 2. Launch Chainweaver and create your mnemonic key
 
 ## Add devnet to Chainweaver
