@@ -70,6 +70,9 @@ to be created before it can be used.
 > (personal recommendation to
 > [install with `n`](https://github.com/tj/n#readme)) and run `npm install` in
 > the root of this project
+> 
+> 1. install nodejs
+> 2. run `npm install`
 
 Before we can create an account, you need to have KDA to pay for the gas-fees
 (transaction fee).
