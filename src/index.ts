@@ -1,6 +1,9 @@
 import { Command, Option } from 'commander';
 import { fund } from './fund';
 import { deploy } from './deploy';
+import { existsSync, readFileSync } from 'fs';
+import { join } from 'path';
+
 const program = new Command();
 
 program
@@ -40,6 +43,15 @@ program
       'predicate to use for keyset',
     ).choices(['keys-all', 'keys-one', 'keys-two']),
   )
+  .option('--file <file>', 'file to deploy', (filePath) => {
+    const path = join(process.cwd(), filePath);
+    if (!existsSync(path)) throw Error(`File ${path} does not exist`);
+    try {
+      return readFileSync(filePath);
+    } catch (e) {
+      throw Error(`Failed to read file ${path}. Details: ${e}`);
+    }
+  })
   .action(async (args) => {
     try {
       await deploy(args);

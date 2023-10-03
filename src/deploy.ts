@@ -36,22 +36,26 @@ const getSignFunction = (account: string) => {
   return signWithChainweaver;
 };
 
-export function deploy(keyset: { keys?: string[]; predicate: string }) {
-  const account = keyset.keys ? `k:${keyset.keys[0]}` : 'sender00';
-  const publicKey = keyset.keys ? keyset.keys[0] : sender00Pk;
+export function deploy(args: {
+  keys?: string[];
+  predicate: string;
+  file?: string;
+}) {
+  const account = args.keys ? `k:${args.keys[0]}` : 'sender00';
+  const publicKey = args.keys ? args.keys[0] : sender00Pk;
   console.log(`Deploying with account: ${account}\nPublic Key: ${publicKey}`);
 
   return asyncPipe(
     composePactCommand(
       execution(
-        `
-        (namespace 'free)
-        (module hello-world G
-          (defcap G () true)
-          (defun say-hello(name:string)
-            (format "Hello, {}! ~ from: ${publicKey}" [name])
-          )
-         )`,
+        args.file ||
+          `(namespace 'free)
+(module hello-world G
+  (defcap G () true)
+  (defun say-hello(name:string)
+    (format "Hello, {}! ~ from: ${publicKey}" [name])
+  )
+)`,
       ),
       setMeta({
         gasLimit: 100000,
@@ -59,7 +63,7 @@ export function deploy(keyset: { keys?: string[]; predicate: string }) {
         senderAccount: account,
       }),
       setNetworkId(NETWORK_ID),
-      addSigner(sender00Pk),
+      addSigner(publicKey),
     ),
     createTransaction,
     getSignFunction(account),
