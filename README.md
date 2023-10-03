@@ -6,8 +6,8 @@ steps to kickstart your journey with Kadena. Whether you're a seasoned
 blockchain developer or a newcomer to the space, you'll find the process
 intuitive and efficient.
 
-Here we run Devnet and deploy a "Hello World" smart-contract on Kadena blockchain 
-in 10 minutes
+Here we run Devnet and deploy a "Hello World" smart-contract on Kadena
+blockchain in 10 minutes
 
 ## Start fat-container `kadena/devnet`
 
@@ -70,7 +70,7 @@ to be created before it can be used.
 > (personal recommendation to
 > [install with `n`](https://github.com/tj/n#readme)) and run `npm install` in
 > the root of this project
-> 
+>
 > 1. install nodejs
 > 2. run `npm install`
 
@@ -97,4 +97,65 @@ makes a `keyset`, which is used to `guard` your account.
 
 ## Deploy a contract
 
-TBD
+We're going to deploy a simple `hello world` smart contract using "sender00". To
+do this simply run:
+
+```
+npm run start -- deploy
+```
+
+You can also deploy the same `hello world` contract using your newly created
+account:
+
+```
+npm run start -- deploy --keys "<your-key>" --predicate "keys-all"
+```
+
+Now we can try to execute the `say-hello` function using chainweaver. First
+navigate to the contracts tab:
+
+![image](https://github.com/kadena-community/getting-started/assets/1508400/0f2d192f-6a75-4a9b-ba5d-e87ff51edaf4)
+
+Then click on the module explorer from the right side tab:
+
+![image](https://github.com/kadena-community/getting-started/assets/1508400/af74e8e4-199e-4f6b-a199-f5f2f1ac9ec5)
+
+Then search for the `hello-world` contract:
+
+![image](https://github.com/kadena-community/getting-started/assets/1508400/5b253553-8e3c-43a7-8e23-a0309675d5d7)
+
+View the contract to see all available methods:
+
+![image](https://github.com/kadena-community/getting-started/assets/1508400/8b360ae2-260d-4eed-8c6f-f742d427d49d)
+
+Click on `call` to see the necessary arguments:
+
+![image](https://github.com/kadena-community/getting-started/assets/1508400/808ddb40-cab9-4eba-aa15-35d823f020a8)
+
+Notice how the raw command is prepared by chainweaver, make sure to fill in
+`sender00` for the account. If you don't fill in any account, chainweaver will
+warn you that no account has been selected for the transaction:
+
+![image](https://github.com/kadena-community/getting-started/assets/1508400/02677a89-17ed-4a83-812b-b2fc40896018)
+
+Then click on preview and ignore the
+`A 'Gas Payer' has not been selected for this transaction` message. We are only
+performing a lookup and will not be submitting this transaction. Scrolll all the
+way down and see the result of the method:
+
+![image](https://github.com/kadena-community/getting-started/assets/1508400/c2c3eba1-a87b-48c6-b01a-4ab5b2e0b643)
+
+Now let's copy the `Raw Command` and close the window. Paste the `Raw Command`
+in the editor:
+
+![image](https://github.com/kadena-community/getting-started/assets/1508400/d205e7aa-1b66-4fa9-8c00-2c1560c9bb2a)
+
+Click on `Deploy` and fill in account to `sender00` and click on Preview once
+more:
+
+![image](https://github.com/kadena-community/getting-started/assets/1508400/7e76d1f5-188e-4631-8c4b-ba5047bc350d)
+
+NOTE: if you do not fill in any account you will be presented with the following
+message:
+
+![image](https://github.com/kadena-community/getting-started/assets/1508400/3747b8a8-3c34-496d-8da4-5933d0fc83a4)
