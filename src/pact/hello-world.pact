@@ -2,19 +2,19 @@
 (module hello-world G
   (defcap G () true)
 
-	(defschema hello-world-schema
-		@doc "The schema for hello world"
+  (defschema hello-world-schema
+    @doc "The schema for hello world"
 
-		text:string)
+    text:string)
 
-	(deftable hello-world-table:{hello-world-schema})
+  (deftable hello-world-table:{hello-world-schema})
 
   (defun say-hello(name:string)
     (format "Hello, {}!" [name]))
 
-	(defun write-hello(name:string)
-		(write hello-world-table name
-			{ "text": (say-hello name) }))
+  (defun write-hello(name:string)
+    (write hello-world-table name
+      { "text": (say-hello name) }))
 
 )
 

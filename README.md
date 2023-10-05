@@ -184,8 +184,8 @@ To write on the blockchain via a smart contract, we need to make a few
 adjustments to our smart contract.
 
 We've created an updated smart contract for you that you can use for that.
-[Check it out here](./src/pact/hello-world.pact). Run the following command to
-**redeploy** the `hello-world` smart contract:
+[Check it out here](https://github.com/kadena-community/getting-started/blob/main/src/pact/hello-world.pact).
+Run the following command to **redeploy** the `hello-world` smart contract:
 
 ```shell
 npm run start -- deploy \
@@ -223,7 +223,7 @@ We also created a function that allows you to write to the schema:
     { "text": (say-hello name) }))
 ```
 
-## Executing a write function
+### Executing a write function
 
 1. Go to the "contracts" page in Chainweaver
 2. Write the following snippet
@@ -249,7 +249,7 @@ We also created a function that allows you to write to the schema:
 11. Click "submit". Now that you have written to the table, we can read from the
     table
 
-## Read from the table
+### Read from the table
 
 Execute the following function, and deploy to read the keys from the table.
 
@@ -269,6 +269,11 @@ Execute the following function, and deploy to read the keys from the table.
    [{"text": "Hello, Albert!"}]
    ```
 
+## Further reading
+
+A very good and complete tutorial on learning pact, with real world scenario's,
+is the
+[Real World Pact series of Thomas Honeyman](https://github.com/thomashoneyman/real-world-pact#real-world-pact)
 
 <!-- Now we can try to execute the `say-hello` function using chainweaver. First
 navigate to the contracts tab:
