@@ -10,6 +10,7 @@
   "author": "Albert Groothedde <albert@kadena.io>",
   "license": "ISC",
   "dependencies": {
+    "@inquirer/prompts": "^3.2.0",
     "@kadena/client": "^1.4.0",
     "@kadena/cryptography-utils": "^0.3.8",
     "commander": "^11.0.0"

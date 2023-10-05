@@ -16,7 +16,7 @@ export const submit = (tx: ICommand) => getClient().submit(tx);
 export const listen = (tx: ITransactionDescriptor) => getClient().listen(tx);
 export const signTransaction =
   ({ publicKey, secretKey }: { publicKey: string; secretKey: string }) =>
-  (tx: IUnsignedCommand) => {
+  async (tx: IUnsignedCommand) => {
     const { sig } = sign(tx.cmd, {
       publicKey,
       secretKey,

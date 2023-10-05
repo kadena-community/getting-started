@@ -31,6 +31,7 @@ program
 program
   .command('deploy')
   .description('deploy a module to devnet')
+  .option('-m, --sign-manually', 'manually sign transaction', false)
   .addOption(
     new Option(
       '--keys [keys...]',

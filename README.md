@@ -39,9 +39,10 @@ workflow, the devnet mines a block in 5 seconds.
 
 ## Chainweaver wallet
 
-1. Download and install Chainweaver:
-   https://github.com/kadena-io/chainweaver/releases  
-   Or use the web version: https://chainweaver.kadena.network
+1. Use Chainweaver
+   1. Download and install from
+      https://github.com/kadena-io/chainweaver/releases
+   2. Or, use the web version: https://chainweaver.kadena.network
 2. Launch Chainweaver and create your mnemonic key
 
 ## Add devnet to Chainweaver
@@ -114,6 +115,10 @@ We've created the commands necessary to deploy this smart contract. You can just
 run the following command. Make sure to have Chainweaver open, as it's required
 to sign with your private key.
 
+**Important**: the web version of Chainweaver does not have an automated signing
+flow. Use the **Chainweaver Web** command. **_Follow the instructions in the
+terminal_**.
+
 Once you run the command you'll see a modal open in Chainweaver. This modal
 shows a few things:
 
@@ -129,6 +134,9 @@ shows a few things:
 
 ```shell
 npm run start -- deploy --keys "<your-key>" --predicate "keys-all"
+
+# chainweaver web: follow the instructions in the terminal
+npm run start -- deploy --keys "<your-key>" --predicate "keys-all" --sign-manually
 ```
 
 In the terminal you'll see a "requestkey". Copy this and search for it to the
@@ -192,6 +200,13 @@ npm run start -- deploy \
   --keys "your-key" \
   --predicate keys-all \
   --file ./src/pact/hello-world.pact
+
+# chainweaver web: follow the instructions in the terminal
+npm run start -- deploy \
+  --keys "your-key" \
+  --predicate keys-all \
+  --file ./src/pact/hello-world.pact \
+  --sign-manually
 ```
 
 You'll walk through the same process as before in Chainweaver.
@@ -304,7 +319,7 @@ warn you that no account has been selected for the transaction:
 
 <!-- Then click on preview and ignore the
 `A 'Gas Payer' has not been selected for this transaction` message. We are only
-performing a lookup and will not be submitting this transaction. Scrolll all the
+performing a lookup and will not be submitting this transaction. Scroll all the
 way down and see the result of the method:
 
 ![image](https://github.com/kadena-community/getting-started/assets/1508400/c2c3eba1-a87b-48c6-b01a-4ab5b2e0b643) -->
