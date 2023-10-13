@@ -286,6 +286,12 @@ Execute the following function, and deploy to read the keys from the table.
 
 ## Further reading
 
+Get started with the basics of Pact by reading the
+[Welcome to Pact](https://docs.kadena.io/learn-pact/beginner/welcome-to-pact)
+docs.
+
+[Reference documentation of Pact](https://pact-language.readthedocs.io/en/latest/)
+
 A very good and complete tutorial on learning pact, with real world scenario's,
 is the
 [Real World Pact series of Thomas Honeyman](https://github.com/thomashoneyman/real-world-pact#real-world-pact)
