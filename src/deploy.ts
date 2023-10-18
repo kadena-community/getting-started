@@ -23,6 +23,7 @@ import {
   submit,
 } from './helpers';
 import { input } from '@inquirer/prompts';
+import 'dotenv/config'
 
 const NETWORK_ID = process.env.CHAINWEB_NETWORK || 'fast-development';
 const CHAIN_ID = (process.env.CHAINWEB_CHAIN || '0') as ChainId;
