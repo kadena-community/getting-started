@@ -85,6 +85,17 @@ In this process, we’ll submit a transaction that creates an account based on t
 "keys" and "predicate" that you supply. The combination of `keys` + `predicate`
 makes a `keyset`, which is used to `guard` your account.
 
+0. Clone the repository. It has scripts to make your life easier
+
+   ```shell
+   git clone https://github.com/kadena-community/getting-started.git
+   # or
+   git clone git@github.com:kadena-community/getting-started.git
+   # and install dependencies (you need to have nodejs preinstalled)
+   cd getting-started
+   npm install
+   ```
+
 1. Send money from "sender00" to your account. Copy your account name from the
    "Accounts" tab and fill it in the command
 
