@@ -67,14 +67,6 @@ to be created before it can be used.
 
 ## Fund your account
 
-> Note: we use [NodeJS](https://nodejs.dev/en/learn/how-to-install-nodejs/)
-> (personal recommendation to
-> [install with `n`](https://github.com/tj/n#readme)) and run `npm install` in
-> the root of this project
->
-> 1. install nodejs
-> 2. run `npm install`
-
 Before we can create an account, you need to have KDA to pay for the gas-fees
 (transaction fee).
 
@@ -84,6 +76,11 @@ We can gain KDA by funding it from a pre-installed "devnet" account called
 In this process, we’ll submit a transaction that creates an account based on the
 "keys" and "predicate" that you supply. The combination of `keys` + `predicate`
 makes a `keyset`, which is used to `guard` your account.
+
+Prerequisite: you need to have node installed on your machine: 
+[NodeJS](https://nodejs.dev/en/learn/how-to-install-nodejs/)
+(personal recommendation to [install with `n`](https://github.com/tj/n#readme))
+
 
 0. Clone the repository. It has scripts to make your life easier
 
