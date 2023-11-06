@@ -94,7 +94,7 @@ Prerequisite: you need to have node installed on your machine:
    ```
 
 1. Send money from "sender00" to your account. Copy your account name from the
-   "Accounts" tab and fill it in the command
+   "Accounts" tab and fill it in the command. (Your accountname minus the `k:`)
 
    ```shell
    npm run start -- fund --keys "<your-key>" --predicate "keys-all"
@@ -130,7 +130,7 @@ terminal_**.
 Once you run the command you'll see a modal open in Chainweaver. This modal
 shows a few things:
 
-1. Transaction metadata like who pays for the transaction, etc.
+1. Transaction metadata, like who pays for the transaction, etc.
 2. The "code" that's executed when the transaction
 3. The "data" that's available for the functions that are executed (in this case
    nothing)
