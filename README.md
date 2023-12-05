@@ -1,3 +1,14 @@
+---
+title: Quick start
+description: Get started with blockchain basics by setting up a development environment, creating a wallet account, and deploying your first contract.
+menu: Quick start
+label: Quick start
+order: 0
+layout: full
+tags: [devnet,chainweaver,tutorial,docker,transactions]
+lastModifiedDate: 
+---
+
 # Quick start 
 
 This _Quick start_ introduces a few basic steps for working with Kadena. 
@@ -88,16 +99,22 @@ To set up the local development network:
    docker start devnet
    ```
 
+   After you start the development network, you'll see information about the network processes displayed in a terminal console.
+
+   ![Development network (devnet) console](/assets/docs/hello-world-quickstart/devnet-console.png)
+
 ## View the development network
 
 The `devnet` container includes a block explorer that connects to the network.
 You can open the block explorer to see blocks as they are added to the blockchain and the transactions that are executed and included in those blocks.
 On the Kadena main network, blocks are added to the chain every 30 seconds. 
-However, to optimize the development workflow on the Kadena development network, blocks are added to the chain every five seconds. 
+However, to optimize the development workflow on the Kadena development network, blocks are added to the chain every five seconds.
+
+To view the development network:
 
 1. Open a web browser on your local computer.
 2. Open the Kadena development network block explorer using the URL http://localhost:8080/explorer/.
-3. Notice that blocks are added every five seconds but at this point no transactions are being executed.
+3. Notice that blocks are added every five seconds, but, at this point, no transactions are being executed.
 
 ## Create an account wallet
 
@@ -215,7 +232,7 @@ To fund your account:
 Now that you have a funded account, you can use that account and public key to deploy a simple `hello world` smart contract—written in the Kadena programming language, Pact—on the development network.
 You'll learn more about Pact in other tutorials, but for now, you can deploy a predefined smart contract that looks like this:
 
-```lisp
+```pact
 (namespace 'free)
 (module hello-world GOVERNANCE
   (defcap GOVERNANCE () true)
@@ -254,20 +271,22 @@ To deploy the smart contract:
 
 4. Scroll to locate the **Signers** section of the transaction and verify that your public key is listed, then click **Sign**.
 
-5. Copy the full Command JSON and paste it into the terminal.
+5. Copy the full Command JSON and paste it into the terminal, then click **Done** in Chainweaver to close the Signature Builder.
    
-   After you enter this command, the terminal displays information about the transaction including a `requestKey`. 
-   You can click **Done** in Chainweaver to close the Signature Builder.
+   After you enter the command in the terminal, you'll see that the terminal displays information about the transaction including a `requestKey`. 
+   You can copy this `requestKey` from the terminal to view information about the transaction in the [Kadena block explorer](http://localhost:8080/explorer).
 
-6. Copy the `requestKey` from the terminal.
+To verify the "Hello, World!" contract deployment in the block explorer:
 
-7. Open the [Kadena block explorer](http://localhost:8080/explorer), select **Request Key**, paste the `requestKey` from the terminal, then click **Search**
+1. Open the [Kadena block explorer](http://localhost:8080/explorer).
+
+2. Select **Request Key** as the information you want to search for.
    
-   In the Transaction Results, you'll see a result similar to the following:
+   ![Select Request Key to search for your transaction](/assets/docs/hello-world-quickstart/request-key.png)
    
-   Loaded module free.hello-world, hash -pMyUsZtHx8ThNr3zlzPVxdZJa-aJTK29skwWOu9APw
-
-Now that you have uploaded the smart contract, you can interact with it on the development network.
+3. Paste the `requestKey` from the terminal, then click **Search** to see transaction results similar to the following:
+   
+   ![Deployed smart contract](/assets/docs/hello-world-quickstart/tx-result.png)
 
 ## View the smart contract
 
@@ -299,7 +318,7 @@ To execute a command using the `hello-world` contract:
 
 1. In the left side under Contracts, remove the sample contract displayed, then type the following command:
    
-   ```lisp
+   ```pact
    (free.hello-world.say-hello "World")
    ```
 
@@ -312,7 +331,7 @@ To execute a command using the `hello-world` contract:
 
 4. Scroll to see the Raw Response:
    
-   <!--![Raw response for Hello, World smart contract](/public/assets/docs/hello-world-quickstart/raw-response-hello.png)-->
+   ![Deployed "Hello, World!" smart contract](/assets/docs/hello-world-quickstart/raw-response-hello.png)
 
 ## Write to the blockchain
 
@@ -324,7 +343,7 @@ No contract logic was executed in the transaction.
 To illustrate how you can change the state of information stored on the blockchain using the logic in a smart contract, you first need to modify the code in the `hello-world` smart contract.
 The modified version of the smart contract looks like this:
 
-```lisp
+```pact
 (namespace 'free)
 (module hello-world G
   (defcap G () true)
@@ -358,7 +377,7 @@ Anything between the curly braces (`{ }`) must comply with the schema.
 
 The schema for this contract is defined in the following lines:
 
-```lisp
+```pact
 (defschema hello-world-schema
   @doc "The schema for hello world"
 
@@ -367,7 +386,7 @@ The schema for this contract is defined in the following lines:
 
 The updated contract also includes a function that allows you to write to the schema in the following lines:
 
-```lisp
+```pact
 (defun write-hello(name:string)
   (write hello-world-table name
     { "text": (say-hello name) }))
@@ -426,6 +445,8 @@ To view the `hello-world` smart contract:
 
 4. Click **View**  and note that the new contract has two new functions—`say-hello` and `write-hello`.
    
+   ![Updated "Hello, World!" smart contract](/assets/docs/hello-world-quickstart/updated-two-functions.png)
+   
    The `say-hello` function reads from the table and the `write-hello` function writes to the table.
 
 ### Execute a write function
@@ -434,7 +455,7 @@ To view the `hello-world` smart contract:
 
 2. In the editor, type the following code:
    
-   ```lisp
+   ```pact
    (free.hello-world.write-hello "Everyone")
    ```
 
@@ -466,7 +487,7 @@ Now that you have written to the table, you can read from the table.
 
 1. In the editor, type the following code:
    
-   ```lisp
+   ```pact
    (map (read free.hello-world.hello-world-table) (keys free.hello-world.hello-world-table))
    ```
 
@@ -480,7 +501,7 @@ Now that you have written to the table, you can read from the table.
 
 6. Check the Raw Response and verify that you see the following:
    
-   [{"text": "Hello, Everyone!"}]
+   ![Updated "Hello, World!" smart contract](/assets/docs/hello-world-quickstart/hello-everyone.png)
 
 ## Reset the development network
 
