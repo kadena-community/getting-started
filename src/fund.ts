@@ -16,7 +16,7 @@ import {
   submit,
 } from './helpers';
 
-const NETWORK_ID = process.env.CHAINWEB_NETWORK || 'fast-development';
+const NETWORK_ID = process.env.CHAINWEB_NETWORK || 'development';
 const CHAIN_ID = (process.env.CHAINWEB_CHAIN || '0') as ChainId;
 
 const sender00Pk =
