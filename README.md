@@ -223,6 +223,12 @@ To fund your account:
    The combination of the `keys` and `predicate` create a **keyset** that is used to safeguard your account.
    You'll learn more about keysets in other tutorials.
 
+   > Note: to fund on another network, you can set an environment variable for 
+   > `CHAINWEB_NETWORK` to the network name you want to use.
+   > For example `export CHAINWEB_NETWORK=development` before running the command.
+   > To see what network you're on, go to ()[http://localhost:8080/info]. 
+   > The `nodeVersion` will show the network name.
+
 2. Open the [Kadena Block Explorer](http://localhost:8080/explorer/) to search for the transaction using the account you copied from Chainweaver.
 
 3. In Chainweaver, click **Refresh** to update the account balance.
